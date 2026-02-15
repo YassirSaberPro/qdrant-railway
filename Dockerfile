@@ -22,6 +22,4 @@ ENV QDRANT__LOG_LEVEL=INFO
 # Create storage directory
 RUN mkdir -p /qdrant/storage /qdrant/snapshots
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=120s --retries=5 \
-  CMD curl -f http://localhost:6333/healthz || exit 1
+# Default entrypoint from base image
