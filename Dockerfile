@@ -23,5 +23,5 @@ ENV QDRANT__LOG_LEVEL=INFO
 RUN mkdir -p /qdrant/storage /qdrant/snapshots
 
 # Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+HEALTHCHECK --interval=30s --timeout=10s --start-period=120s --retries=5 \
   CMD curl -f http://localhost:6333/healthz || exit 1
